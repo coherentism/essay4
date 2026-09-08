@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<!-- =====================================================================
+     HOW TO USE THIS TEMPLATE
+     ---------------------------------------------------------------------
+     1. Copy this whole folder for each new essay.
+     2. Search the file for the word  INSERT  and replace each one.
+     3. To add a picture: drop the file into the /images folder, then
+        change  images/UPLOAD-IMAGE-HERE.jpg  to your file name.
+     4. To add a PDF: drop it into /documents, then change the .pdf path.
+     5. Any block wrapped in  "OPTIONAL — DELETE IF NOT NEEDED"  can be
+        removed entirely. Delete from the opening comment to </...>.
+     6. You never touch style.css or script.js.
+     7. To duplicate a feature (another gallery, another claim, another
+        tab), copy its block and fill it in — it wires itself up.
+
+     EVERYTHING between  <!-- ==== EDIT BELOW ==== -->  and
+     <!-- ==== STOP EDITING ==== -->  is yours. Below that is the engine.
+===================================================================== -->
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>INSERT ESSAY TITLE HERE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ==================== EDIT BELOW ==================== -->
+<div class="app" data-altitude="read" id="app">
+
+  <!-- =========================================================
+       SITE RAIL  — change the site name link labels if you like.
+       (Keep this block; it is your book's navigation.)
+  ========================================================= -->
+  <aside class="rail">
+    <svg class="glyph" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="10" stroke="currentColor" stroke-width="2"/><ellipse cx="20" cy="20" rx="18" ry="6.5" stroke="currentColor" stroke-width="2" transform="rotate(-24 20 20)"/></svg>
+    <a class="rail-item active" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 5.5A2 2 0 0 1 6 4h6v16H6a2 2 0 0 1-2-2z"/><path d="M20 5.5A2 2 0 0 0 18 4h-6v16h6a2 2 0 0 0 2-2z"/></svg><span>Read</span></a>
+    <a class="rail-item" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 4 4 6v14l5-2 6 2 5-2V4l-5 2-6-2z"/><path d="M9 4v14M15 6v14"/></svg><span>Map</span></a>
+    <a class="rail-item" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 4h11a2 2 0 0 1 2 2v14H7a2 2 0 0 1-2-2z"/><path d="M18 6h1v14"/></svg><span>Library</span></a>
+    <a class="rail-item" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search</span></a>
+    <div class="rail-spacer"></div>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light or dark">
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    </button>
+  </aside>
+
+  <div class="main">
+    <!-- =========================================================
+         TOP BAR
+         OPTIONAL — the Skim/Read/Study control + search + actions.
+         Delete this whole <header> if you want a bare reading page.
+    ========================================================= -->
+    <header class="topbar">
+      <nav class="crumbs"><span>Essays</span><span class="sep">/</span><span class="here">INSERT ESSAY TITLE HERE</span></nav>
+      <div class="topbar-right">
+        <div class="altitude" id="altitude">
+          <span class="thumb" id="thumb"></span>
+          <button data-alt="skim" onclick="setAltitude('skim')">Skim</button>
+          <button data-alt="read" class="on" onclick="setAltitude('read')">Read</button>
+          <button data-alt="study" onclick="setAltitude('study')">Study</button>
+        </div>
+        <div class="search-mini"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Search<span class="kbd">⌘K</span></div>
+        <button class="icon-btn" aria-label="Save"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 4h12v16l-6-4-6 4z"/></svg></button>
+      </div>
+    </header>
+
+    <div class="scroll">
+      <article class="reading">
+
+        <!-- =========================================================
+             ESSAY HEADER  (title, subtitle, tags, read time)
+        ========================================================= -->
+        <div class="index-line">Essay <b>INSERT NUMBER</b> of INSERT TOTAL</div>
+        <h1 class="title">INSERT ESSAY TITLE HERE</h1>
+        <p class="subtitle">INSERT ONE-LINE SUBTITLE HERE</p>
+        <div class="meta-row">
+          <!-- OPTIONAL tags — add or delete <span> items -->
+          <span class="tag">INSERT TOPIC</span>
+          <span class="tag">INSERT TOPIC</span>
+          <span class="tag">INSERT TOPIC</span>
+          <!-- OPTIONAL read time -->
+          <span class="meta-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>INSERT READ TIME</span>
+          <!-- OPTIONAL listen button -->
+          <span class="listen"><span class="pp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 5v14l12-7z"/></svg></span>Listen</span>
+        </div>
+
+        <!-- =========================================================
+             HERO — QUOTE VERSION
+             OPTIONAL — DELETE IF NOT NEEDED.
+             (For an image hero instead, delete this block and use the
+              HERO — IMAGE VERSION block just below.)
+        ========================================================= -->
+        <div class="hero">
+          <svg class="rings" viewBox="0 0 360 360"><circle cx="180" cy="180" r="60"/><circle cx="180" cy="180" r="105"/><circle cx="180" cy="180" r="150"/><circle cx="180" cy="180" r="178"/></svg>
+          <p class="hero-q">"INSERT A SHORT, STRIKING QUOTE OR LINE FROM THE ESSAY."</p>
+          <div class="hero-rule"></div>
+        </div>
+
+        <!-- =========================================================
+             HERO — IMAGE VERSION
+             OPTIONAL — DELETE IF NOT NEEDED.
+        ========================================================= -->
+        <!--
+        <figure class="hero-img">
+          <img src="images/UPLOAD-IMAGE-HERE.jpg" alt="INSERT IMAGE DESCRIPTION">
+          <figcaption>INSERT IMAGE CAPTION HERE</figcaption>
+        </figure>
+        -->
+
+        <!-- =========================================================
+             TABBED BLOCK  (up to 4 tabs, click through)
+             OPTIONAL — DELETE IF NOT NEEDED.
+             • Tabs and panes are matched top-to-top in order.
+             • Add or delete a <button> + its <div class="tabpane"> pair.
+             • For SIDE tabs instead of top: <div class="tabblock side">
+        ========================================================= -->
+        <div class="tabblock">
+          <div class="tabbar">
+            <button class="tabbtn on">INSERT TAB 1</button>
+            <button class="tabbtn">INSERT TAB 2</button>
+            <button class="tabbtn">INSERT TAB 3</button>
+            <button class="tabbtn">INSERT TAB 4</button>
+          </div>
+          <div class="tabpane on"><p>INSERT TAB 1 CONTENT HERE.</p></div>
+          <div class="tabpane"><p>INSERT TAB 2 CONTENT HERE.</p></div>
+          <div class="tabpane"><p>INSERT TAB 3 CONTENT HERE.</p></div>
+          <div class="tabpane"><p>INSERT TAB 4 CONTENT HERE.</p></div>
+        </div>
+
+        <!-- =========================================================
+             IN THIS ESSAY  (expandable contents)
+             OPTIONAL — DELETE IF NOT NEEDED.
+        ========================================================= -->
+        <details class="panel contents-panel">
+          <summary><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span>In this essay</span><span class="hint">Jump to a section</span></summary>
+          <div class="panel-content">
+            <a href="#section-1">I. INSERT SECTION TITLE</a>
+            <a href="#section-2">II. INSERT SECTION TITLE</a>
+            <a href="#section-3">III. INSERT SECTION TITLE</a>
+          </div>
+        </details>
+
+        <!-- =========================================================
+             TL;DR  (expandable summary)
+             OPTIONAL — DELETE IF NOT NEEDED.
+        ========================================================= -->
+        <details class="panel tldr">
+          <summary><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11h6M9 15h4M7 3h10a2 2 0 0 1 2 2v14l-3-2-2 2-2-2-2 2-2-2-3 2V5a2 2 0 0 1 2-2z"/></svg><span>TL;DR</span><span class="hint">Quick summary</span></summary>
+          <div class="panel-content">
+            <p>INSERT A 3–4 SENTENCE SUMMARY OF THE ESSAY HERE.</p>
+            <p>INSERT THE CENTRAL QUESTION OR CONCLUSION HERE.</p>
+          </div>
+        </details>
+
+        <!-- =========================================================
+             CALLOUT
+             OPTIONAL — DELETE IF NOT NEEDED.
+        ========================================================= -->
+        <aside class="callout">
+          <div class="cl-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>INSERT LABEL</div>
+          <p>INSERT AN IMPORTANT IDEA, DISTINCTION, WARNING OR TAKEAWAY HERE.</p>
+        </aside>
+
+        <!-- =========================================================
+             SECTION I
+        ========================================================= -->
+        <section id="section-1">
+          <h2 class="prose-h2">I. INSERT SECTION TITLE HERE</h2>
+          <div class="prose">
+            <p class="lead">INSERT OPENING PARAGRAPH HERE.</p>
+            <p>INSERT BODY COPY HERE.</p>
+
+            <!-- INTERACTIVE CLAIM
+                 OPTIONAL — to make a sentence open its own evidence panel,
+                 wrap it in <span class="claim" data-claim="c1">…</span>,
+                 then fill in the matching claim-detail block below.
+                 To make it a normal sentence, delete the wrapper (keep text). -->
+            <p><span class="claim" data-claim="c1">INSERT A KEY CLAIM SENTENCE HERE.</span> INSERT MORE BODY COPY HERE.</p>
+
+            <!-- CLAIM DETAIL for c1 (hidden until the claim is clicked)
+                 Delete any axis you don't need — its tab disappears. -->
+            <div class="claim-detail" data-for="c1">
+              <div class="axis-block" data-axis="Argument">
+                <p>INSERT THE FULLER ARGUMENT BEHIND THIS CLAIM HERE.</p>
+              </div>
+              <div class="axis-block" data-axis="Evidence">
+                <p><strong>Source:</strong> INSERT SOURCE TITLE, AUTHOR, YEAR.</p>
+                <p>INSERT THE RELEVANT QUOTED LINE OR FINDING HERE.</p>
+              </div>
+              <div class="axis-block" data-axis="Objection">
+                <p><strong>The objection:</strong> INSERT THE STRONGEST COUNTERARGUMENT HERE.</p>
+                <p><strong>Response:</strong> INSERT YOUR RESPONSE HERE.</p>
+                <p><strong>What would change my mind:</strong> INSERT ANSWER HERE.</p>
+              </div>
+              <div class="axis-block" data-axis="History">
+                <p>First written INSERT DATE. Revised INSERT NUMBER times. Last reviewed INSERT DATE.</p>
+              </div>
+            </div>
+
+            <!-- PULL QUOTE — OPTIONAL, DELETE IF NOT NEEDED -->
+            <blockquote class="pullquote">INSERT A QUOTE OR IMPORTANT SENTENCE HERE.<cite>INSERT SOURCE</cite></blockquote>
+
+            <!-- INLINE IMAGE — OPTIONAL, DELETE IF NOT NEEDED -->
+            <figure class="figure">
+              <img src="images/UPLOAD-IMAGE-HERE.jpg" alt="INSERT DESCRIPTION">
+              <figcaption>INSERT CAPTION AND SOURCE HERE</figcaption>
+            </figure>
+
+            <p>INSERT BODY COPY HERE.</p>
+          </div>
+
+          <!-- DIG DEEPER  (expandable) — OPTIONAL, DELETE IF NOT NEEDED -->
+          <details class="panel dig-deeper">
+            <summary><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16" opacity=".4"/><path d="m8 4 8 16"/></svg><span>Dig deeper</span><span class="hint">Explore this idea</span></summary>
+            <div class="panel-content">
+              <p>INSERT DEEPER EXPLANATION HERE.</p>
+              <p>INSERT ADDITIONAL DETAIL HERE.</p>
+            </div>
+          </details>
+        </section>
+
+        <!-- =========================================================
+             IMAGE GALLERY  (click any image to enlarge + swipe)
+             OPTIONAL — DELETE IF NOT NEEDED.
+             • Add or delete <figure> items freely.
+        ========================================================= -->
+        <div class="gallery">
+          <figure><img src="images/UPLOAD-IMAGE-1.jpg" alt="INSERT DESCRIPTION"><figcaption>INSERT CAPTION</figcaption></figure>
+          <figure><img src="images/UPLOAD-IMAGE-2.jpg" alt="INSERT DESCRIPTION"><figcaption>INSERT CAPTION</figcaption></figure>
+          <figure><img src="images/UPLOAD-IMAGE-3.jpg" alt="INSERT DESCRIPTION"><figcaption>INSERT CAPTION</figcaption></figure>
+          <figure><img src="images/UPLOAD-IMAGE-4.jpg" alt="INSERT DESCRIPTION"><figcaption>INSERT CAPTION</figcaption></figure>
+        </div>
+
+        <!-- =========================================================
+             SECTION II
+        ========================================================= -->
+        <section id="section-2">
+          <h2 class="prose-h2">II. INSERT SECTION TITLE HERE</h2>
+          <div class="prose">
+            <p>INSERT BODY COPY HERE.</p>
+            <p>INSERT BODY COPY HERE.</p>
+          </div>
+        </section>
+
+        <!-- =========================================================
+             DOCUMENTS & PDFs  (enlarge + download)
+             OPTIONAL — DELETE IF NOT NEEDED.
+             • Copy a .pdf-card for each document.
+        ========================================================= -->
+        <div class="pdf-card">
+          <span class="pdf-badge">PDF</span>
+          <div class="pdf-info"><strong>INSERT DOCUMENT TITLE</strong><small>INSERT AUTHOR · DATE</small></div>
+          <div class="pdf-actions">
+            <button class="pdf-enlarge solid" data-src="documents/UPLOAD-PDF-HERE.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>Enlarge</button>
+            <a href="documents/UPLOAD-PDF-HERE.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16"/></svg>Download</a>
+          </div>
+        </div>
+
+        <!-- =========================================================
+             QUOTES  (collection)
+             OPTIONAL — DELETE IF NOT NEEDED.
+        ========================================================= -->
+        <details class="panel">
+          <summary><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 7h4v4c0 2-1 3-3 4M14 7h4v4c0 2-1 3-3 4"/></svg><span>Quotes</span><span class="hint">Collection</span></summary>
+          <div class="panel-content quote-list">
+            <blockquote>INSERT QUOTE HERE.<cite>INSERT PERSON / SOURCE</cite></blockquote>
+            <blockquote>INSERT QUOTE HERE.<cite>INSERT PERSON / SOURCE</cite></blockquote>
+          </div>
+        </details>
+
+        <!-- =========================================================
+             RELATED THEORIES / IDEAS
+             OPTIONAL — DELETE IF NOT NEEDED.
+        ========================================================= -->
+        <details class="panel">
+          <summary><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M7.7 7.7 10.6 15M16.3 7.7 13.4 15"/></svg><span>Related theories</span><span class="hint">Connections</span></summary>
+          <div class="panel-content related-grid">
+            <a href="#"><strong>INSERT RELATED THEORY</strong><span>INSERT SHORT DESCRIPTION</span></a>
+            <a href="#"><strong>INSERT RELATED THEORY</strong><span>INSERT SHORT DESCRIPTION</span></a>
+          </div>
+        </details>
+
+        <!-- =========================================================
+             RELATED FIGURES / THINKERS
+             OPTIONAL — DELETE IF NOT NEEDED.
+        ========================================================= -->
+        <details class="panel">
+          <summary><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="3.2"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/></svg><span>Related figures</span><span class="hint">People &amp; theories</span></summary>
+          <div class="panel-content figures">
+            <div class="person">
+              <img src="images/UPLOAD-PORTRAIT-HERE.jpg" alt="">
+              <div><strong>INSERT PERSON</strong><p>INSERT THEIR CONNECTION TO THIS ESSAY.</p><a href="#">Read more</a></div>
+            </div>
+            <div class="person">
+              <img src="images/UPLOAD-PORTRAIT-HERE.jpg" alt="">
+              <div><strong>INSERT PERSON</strong><p>INSERT THEIR CONNECTION TO THIS ESSAY.</p></div>
+            </div>
+          </div>
+        </details>
+
+        <!-- =========================================================
+             CTA BUTTON
+             OPTIONAL — DELETE IF NOT NEEDED.
+        ========================================================= -->
+        <section class="cta">
+          <div>
+            <div class="cta-label">INSERT SMALL LABEL</div>
+            <h3>INSERT CALL TO ACTION HERE</h3>
+            <p>INSERT ONE SHORT EXPLANATORY LINE HERE.</p>
+          </div>
+          <a href="INSERT LINK HERE" class="cta-btn">INSERT BUTTON TEXT</a>
+        </section>
+
+        <!-- =========================================================
+             CHALLENGE THIS IDEA  (standalone objection block)
+             OPTIONAL — DELETE IF NOT NEEDED.
+        ========================================================= -->
+        <details class="panel">
+          <summary><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3a9 9 0 1 0 9 9M12 3v9l6-3"/></svg><span>Challenge this idea</span><span class="hint">Counterargument</span></summary>
+          <div class="panel-content">
+            <div class="obj-part"><h6><span class="b"></span>The objection</h6><p>INSERT STRONGEST COUNTERARGUMENT.</p></div>
+            <div class="obj-part"><h6><span class="b"></span>Response</h6><p>INSERT YOUR RESPONSE.</p></div>
+            <div class="obj-part chg"><h6><span class="b"></span>What would change my mind</h6><p>INSERT ANSWER.</p></div>
+          </div>
+        </details>
+
+        <!-- =========================================================
+             QUESTIONS FOR FURTHER THOUGHT
+             OPTIONAL — DELETE IF NOT NEEDED.
+        ========================================================= -->
+        <details class="panel">
+          <summary><svg class="pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/><circle cx="12" cy="12" r="9"/></svg><span>Questions for further thought</span><span class="hint">Continue thinking</span></summary>
+          <div class="panel-content questions">
+            <p>INSERT QUESTION HERE?</p>
+            <p>INSERT QUESTION HERE?</p>
+            <p>INSERT QUESTION HERE?</p>
+          </div>
+        </details>
+
+        <!-- =========================================================
+             FOOTER — PREVIOUS / NEXT ESSAY
+        ========================================================= -->
+        <footer class="efoot">
+          <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 5l-7 7 7 7"/></svg><span><span class="lab">Previous</span><span class="ti">INSERT TITLE</span></span></a>
+          <div class="dots"><i class="on"></i><i></i><i></i></div>
+          <a href="#" class="rt"><span><span class="lab">Next</span><span class="ti">INSERT TITLE</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 5l7 7-7 7"/></svg></a>
+        </footer>
+
+      </article>
+    </div>
+  </div>
+
+  <!-- mobile bottom nav -->
+  <nav class="mnav">
+    <button class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 5.5A2 2 0 0 1 6 4h6v16H6a2 2 0 0 1-2-2z"/></svg>Read</button>
+    <button><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 4 4 6v14l5-2 6 2 5-2V4l-5 2-6-2z"/></svg>Map</button>
+    <button><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 4h11a2 2 0 0 1 2 2v14H7a2 2 0 0 1-2-2z"/></svg>Library</button>
+    <button onclick="toggleTheme()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>Theme</button>
+  </nav>
+</div>
+<!-- ==================== STOP EDITING ==================== -->
+
+
+<!-- =====================================================================
+     SYSTEM UI — the overlays the features open into.
+     Leave everything below untouched.
+===================================================================== -->
+
+<!-- claim inspector -->
+<div class="scrim" id="scrim" onclick="closeInspector()"></div>
+<aside class="inspector" id="inspector" aria-hidden="true">
+  <div class="insp-head">
+    <div class="insp-top">
+      <span class="insp-kicker">Inspecting a claim</span>
+      <div class="insp-tools">
+        <button onclick="copyLink()" aria-label="Copy link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 13a5 5 0 0 0 7 0l2-2a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-2 2a5 5 0 0 0 7 7l1-1"/></svg></button>
+        <button onclick="closeInspector()" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      </div>
+    </div>
+    <p class="claim-echo" id="claimEcho"></p>
+  </div>
+  <nav class="axes" id="claimAxes"></nav>
+  <div class="insp-body" id="claimPanes"></div>
+</aside>
+
+<!-- image lightbox -->
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" onclick="closeLb()" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <button class="lb-nav lb-prev" onclick="lbPrev()" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <img id="lbImg" src="" alt="">
+  <div class="lb-cap" id="lbCap"></div>
+  <div class="lb-count" id="lbCount"></div>
+  <button class="lb-nav lb-next" onclick="lbNext()" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg></button>
+</div>
+
+<!-- pdf modal -->
+<div class="pdf-modal" id="pdfModal">
+  <div class="pm-bar">
+    <span class="pm-title">Document</span>
+    <a id="pdfDownload" href="#" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16"/></svg>Download</a>
+    <button onclick="closePdf()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>Close</button>
+  </div>
+  <iframe id="pdfFrame" src="" title="PDF"></iframe>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
